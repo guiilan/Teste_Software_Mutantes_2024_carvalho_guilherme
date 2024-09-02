@@ -7,7 +7,8 @@ Repositório escolhido: https://github.com/harsilspatel/toy-robot-simulator
 Meu repositório: https://github.com/guiilan/Teste_Software_Mutantes_2024_carvalho_guilherme
 
 O projeto escolhido é o toy-robot-simulator, desenvolvido em Python 3, com cenários de teste definidos utilizando pytest. Para a realização dos testes de mutação, será utilizado o Mutmut, que é uma ferramenta projetada para detectar mutantes no código, garantindo a robustez dos testes existentes.
-ste robô simulado opera em uma superfície 2D quadrada, onde pode ser posicionado em qualquer ponto dentro dos limites da mesa. Ele pode realizar movimentos simples, como:
+
+Este robô simulado opera em uma superfície 2D quadrada, onde pode ser posicionado em qualquer ponto dentro dos limites da mesa. Ele pode realizar movimentos simples, como:
 Posicionar-se (place): Define a posição inicial do robô e sua direção (Norte, Sul, Leste, Oeste).
 Mover-se (move): Avança uma unidade na direção em que está virado, se o movimento mantiver o robô dentro dos limites da mesa.
 Girar à esquerda ou à direita (LEFT e RIGHT): Muda a direção do robô em 90 graus.
@@ -131,9 +132,11 @@ Os mutantes são oriundos dessa função e sobrevivem porque as mudanças feitas
 Mutante 12:
 Mudança: O comando PLACE foi substituído por XXPLACEXX.
 Motivo da sobrevivência: Os testes não validam se o comando gerado é exatamente PLACE. Assim, quando o mutante altera PLACE para XXPLACEXX, o teste não detecta a mudança porque ele não verifica o valor específico dos comandos gerados, ou o código que lida com o comando PLACE nunca é chamado nos testes.
+
 Mutante 13:
 Mudança: O comando MOVE foi substituído por XXMOVEXX.
 Motivo da sobrevivência: De forma semelhante ao Mutante 12, os testes não verificam especificamente se MOVE é um dos comandos gerados, permitindo que o mutante sobreviva.
+
 Mutante 14:
 Mudança: O comando REPORT foi substituído por XXREPORTXX.
 Motivo da sobrevivência: Como nos outros casos, a mudança do comando REPORT para XXREPORTXX não é detectada pelos testes. Isso indica que os testes não cobrem a verificação dos comandos gerados ou não exercitam suficientemente os cenários onde esses comandos são críticos.
